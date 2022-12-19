@@ -7,4 +7,24 @@
 		insert into member(email, password, nickName, phoneNum) 
 		values(#{email}, #{password}, #{nickName}, #{phoneNum});
 	</insert>
+	
+	<select id="get" resultType="com.jejuro.web.entity.Member">
+		select * from member
+		where email = #{email}
+	</select>
+	
+	<delete id="delete" parameterType="com.jejuro.web.entity.Member">
+		delete from member
+		where email = #{email};
+	</delete>
+	
+	<update id="update" parameterType="com.jejuro.web.entity.Member">
+		update member
+		<set>
+			<if test="nickName != null">nickName=#{nickName}</if>
+			<if test="password != null">password=#{password}</if>
+			<if test="phoneNum != null">phoneNum=#{phoneNum}</if>
+		</set>
+		where email = #{email};
+	</update>
 </mapper>

@@ -18,4 +18,20 @@ public class DefaultMemberService implements MemberService{
 		
 	}
 
+	@Override
+	public Member get(String email) {
+		return dao.get(email);
+	}
+
+
+	@Override
+	public void delete(String email) {
+		dao.delete(email);
+	}
+
+	@Override
+	public void update(Member member) {
+		dao.update(member);
+	}
+
 }

@@ -42,11 +42,11 @@
         <div class="main-header">
             <h1>마이페이지</h1>
         </div>
-        <div class="main-option">
-            <div class="myinfo"><a href="myinfo.html">나의 정보</a></div>
-            <div class="alarm-setting"><a href="alarm.html">알람 설정</a></div>
-        </div>
         <div class="main-main" th:each="member:${member}">
+            <div class="main-option">
+                <div class="myinfo"><a href="myinfo" th:href="@{/member/myinfo/{member.email}(member.email=${member.email})}">나의 정보</a></div>
+                <div class="alarm-setting"><a href="alarm">알람 설정</a></div>
+            </div>
             <ul>
                 <li>
                     <h1>이메일</h1>
@@ -68,14 +68,13 @@
                     <div th:text="${member.phoneNum}">010-****-0000</div>
                 </li>
             </ul>
-        </div>
-        <div class="main-footer">
-            <form action="">
-                <button class="btn"><a href="/html/index.html">회원탈퇴</a></button>
-            </form>
-            <form action="">
-                <button class="btn"><a href="update.html">수정</a></button>
-            </form>
+            <div class="main-footer">
+                <form action="delete" method="post">
+                    <input type="hidden" name="email" th:value="${member.email}">
+                    <button class="btn">회원탈퇴</button>
+                </form>
+                <button class="btn"><a href="update.html" th:href="@{{member.email)update">수정</a></button>
+            </div>
         </div>
     </main>
 

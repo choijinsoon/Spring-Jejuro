@@ -12,6 +12,10 @@ public class Member {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Member(String email) {
+		this.email = email;
+	}
+
 	public Member(String email, String password, String nickName, String phoneNum) {
 		super();
 		this.email = email;
@@ -19,6 +23,16 @@ public class Member {
 		this.nickName = nickName;
 		this.phoneNum = phoneNum;
 	}
+	
+	public Member(int memberId, String email, String password, String nickName, String phoneNum) {
+		super();
+		this.memberId = memberId;
+		this.email = email;
+		this.password = password;
+		this.nickName = nickName;
+		this.phoneNum = phoneNum;
+	}
+
 
 	public int getMemberId() {
 		return memberId;

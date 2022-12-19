@@ -12,7 +12,7 @@
         <div>
             <form action="result" method="post" th:object="${post}">
                 <input type="text" placeholder="제목" th:field="*{title}">
-                <textarea placeholder="내용" th:field="*{content}">
+                <textarea placeholder="내용" th:field="*{content}"></textarea>
                 <button type="submit">추가</button>
             </form>
         </div>

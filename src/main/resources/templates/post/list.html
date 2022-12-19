@@ -9,7 +9,7 @@
 <body>
     <main>
         <h2>게시물 목록</h2>
-        <div th:each="post:${post}">
+        <div th:each="post:${postList}">
             <h2>제목</h2>
             <div th:text="${post.title}"></div>
             <h3>내용</h3>
