@@ -65,8 +65,10 @@
             </div>
     
             <div class="login-form-btn">
-                <button class="btn login-btn" type="submit">
-                    확인
+                <button class="btn login-btn">
+                	<a th:href="@{/member/myinfo/{email}(email=${member.email})}">
+                		확인
+                	</a>
                 </button>
             </div>
         </form>

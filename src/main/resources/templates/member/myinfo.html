@@ -73,7 +73,7 @@
                     <input type="hidden" name="email" th:value="${member.email}">
                     <button class="btn">회원탈퇴</button>
                 </form>
-                <button class="btn"><a href="update.html" th:href="@{{member.email)update">수정</a></button>
+                <button class="btn"><a href="update.html" th:href="@{update/{email}(email=${member.email})}">수정</a></button>
             </div>
         </div>
     </main>

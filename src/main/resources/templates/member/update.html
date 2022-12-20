@@ -45,39 +45,37 @@
         <div class="main-header">
             <h1>마이페이지</h1>
         </div>
-        <div class="main-main" th:each="member:${member}">
-            <form action="/myinfo/update">
-                <div class="input-container">
-                    <div>이메일</div>
-                    <input class="input" type="text" name="email" placeholder="newlecture@newlecture.com" th:placeholder="${member.email}">
-                </div>
-                
-                <div class="input-container">
-                    <div>닉네임</div>
-                    <input class="input" type="text" name="nickname" placeholder="newlecture" th:placeholder="${member.nickName}">
-                </div>
-
-                <div class="input-container">
-                    <div>비밀번호</div>
-                    <input class="input" type="password" name="password" placeholder="******" th:placeholder="${member.password}">
-                </div>
-
-                <div class="input-container">
-                    <div>비밀번호 확인</div>
-                    <input class="input" type="password" placeholder="******">
-                </div>
-
-                <div class="input-container">
-                    <div>휴대폰 번호</div>
-                    <input class="input" type="text" name="phone" placeholder="010-0000-0000" th:placeholder="${member.phoneNum}">
-                </div>
-            </form>
-        </div>
-        <div class="main-footer">
-            <form action="">
-                <button class="btn"><a href="/html/myinfo/myinfo.html">완료</a></button>
-            </form>
-        </div>
+            <div class="main-main">
+                <form action="/member/myinfo/update" method="post" th:object="${member}">
+                    <div class="input-container">
+                        <div>이메일</div>
+                        <input class="input" type="text" placeholder="newlecture@newlecture.com" th:field="*{email}">
+                    </div>
+                    
+                    <div class="input-container">
+                        <div>닉네임</div>
+                        <input class="input" type="text" placeholder="newlecture" th:field="*{nickName}">
+                    </div>
+    
+                    <div class="input-container">
+                        <div>비밀번호</div>
+                        <input class="input" type="text" placeholder="******" th:field="*{password}">
+                    </div>
+    
+                    <div class="input-container">
+                        <div>비밀번호 확인</div>
+                        <input class="input" type="text" placeholder="******">
+                    </div>
+    
+                    <div class="input-container">
+                        <div>휴대폰 번호</div>
+                        <input class="input" type="text" placeholder="010-0000-0000" th:field="*{phoneNum}">
+                    </div>
+	                <div class="main-footer">
+		                <button class="btn" type="submit">완료</button>
+		            </div>
+                </form>
+            </div>
     </main>
 
     <footer>

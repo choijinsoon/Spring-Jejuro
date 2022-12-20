@@ -21,8 +21,8 @@
 	<update id="update" parameterType="com.jejuro.web.entity.Member">
 		update member
 		<set>
-			<if test="nickName != null">nickName=#{nickName}</if>
-			<if test="password != null">password=#{password}</if>
+			<if test="nickName != null">nickName=#{nickName},</if>
+			<if test="password != null">password=#{password},</if>
 			<if test="phoneNum != null">phoneNum=#{phoneNum}</if>
 		</set>
 		where email = #{email};
