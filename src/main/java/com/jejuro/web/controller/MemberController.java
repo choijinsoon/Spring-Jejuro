@@ -25,11 +25,12 @@ public class MemberController {
 		return "member/sign-in";
 	}
 	
-//	@PostMapping("/myinfo")
-//	public String result(Member member) {
-//		service.add(member);
-//		return "member/myinfo";
-//	}
+	@PostMapping("/myinfo")
+	public String result(Member member) {
+		service.add(member);
+		String result = "redirect:/member/myinfo/"+member.getEmail();
+		return result;
+	}
 
 	@GetMapping("/myinfo/{email}")
 	public String myinfo(@PathVariable("email") String email,
@@ -62,7 +63,23 @@ public class MemberController {
 	@PostMapping("/myinfo/update")
 	public String update(Member member) {
 		service.update(member);
-		String result = "member/myinfo/"+(member.getEmail());
+		String result = "redirect:/member/myinfo/"+member.getEmail();
 		return result;
 	}
+
+	@GetMapping("/alarm/{email}")
+	public String alarm(@PathVariable("email") String email,
+						Model model) {
+		Member member = service.get(email);
+		model.addAttribute("member", member);
+		return "member/myinfo";
+	}
+	
+	@PostMapping("/myinfo/{email}")
+	public String Displayalarm(@PathVariable("email") String email) {
+		service.get(email);
+		return "member/myinfo";
+	}
+
+
 }
