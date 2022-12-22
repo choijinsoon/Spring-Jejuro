@@ -10,6 +10,6 @@ public class HomeController {
 
 	@GetMapping("hello")
 	public String home() {
-		return "hello";
+		return "hello!!";
 	}
 }
