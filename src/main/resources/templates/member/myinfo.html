@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/button.css" type="text/css">
     <link rel="stylesheet" href="/css/myinfo/myinfo.css" type="text/css">
     
-    
+    <script src="/js/myinfo/myinfo.js"></script>
 </head>
 <body>
     <header class="header">
@@ -27,47 +27,51 @@
                     <span class="bar bar2"></span>
                     <span class="bar bar3"></span>
                 </div>
+                <div class="wrapper">
+                    <ul>
+                        <li><a href="">여행검색</a></li>
+                        <li><a href="">여행게시판</a></li>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">회원가입</a></li>
+                    </ul>
+                </div>
             </label>
         </div>
-        <!-- <div>
-            <ul>
-                <li><a href="">여행검색</a></li>
-                <li><a href="">여행게시판</a></li>
-                <li><a href="">로그인/회원가입</a></li>
-            </ul>
-        </div> -->
     </header>
 
     <main class="main">
         <div class="main-header">
             <h1>마이페이지</h1>
         </div>
-        <div class="main-main" th:each="member:${member}">
+        <div action="" class="input-form">
             <div class="main-option">
                 <div class="myinfo"><a href="myinfo" th:href="@{/member/myinfo/{member.email}(member.email=${member.email})}">나의 정보</a></div>
-                <div class="alarm-setting"><a href="alarm">알람 설정</a></div>
+                <div class="alarm-setting"><a href="/html/myinfo/alarm.html">알람 설정</a></div>
             </div>
-            <ul>
-                <li>
-                    <h1>이메일</h1>
-                    <div th:text="${member.email}">newlecture@newlecture.com</div>
-                </li>
-                <br>
-                <li>
-                    <h1>닉네임</h1>
-                    <div th:text="${member.nickName}">newlecture</div>
-                </li>
-                <br>
-                <li>
-                    <h1>패스워드</h1>
-                    <div th:text="${member.password}">********</div>
-                </li>
-                <br>
-                <li>
-                    <h1>휴대폰 번호</h1>
-                    <div th:text="${member.phoneNum}">010-****-0000</div>
-                </li>
-            </ul>
+            <div class="main-main" th:each="member:${member}">
+                <ul>
+                    <li>
+                        <h1>이메일</h1>
+                        <div th:text="${member.email}">newlecture@newlecture.com</div>
+                    </li>
+                    <br>
+                    <li>
+                        <h1>닉네임</h1>
+                        <div th:text="${member.nickName}">newlecture</div>
+                    </li>
+                    <br>
+                    <li>
+                        <h1>패스워드</h1>
+                        <div th:text="${member.password}">********</div>
+                    </li>
+                    <br>
+                    <li>
+                        <h1>휴대폰 번호</h1>
+                        <div th:text="${member.phoneNum}">010-****-0000</div>
+                    </li>
+                </ul>
+
+            </div>
             <div class="main-footer">
                 <form action="delete" method="post">
                     <input type="hidden" name="email" th:value="${member.email}">

@@ -6,50 +6,51 @@
 
     display: inline-flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 
 }
+
 .main-header>h1{
     font-size: 48px;
 }
 .main-option{
     display: flex;
-    margin-top: 20px;
 }
 .main-option div{
     padding: 0 20px;
 }
 .main-main{
+    text-align: left;
     margin: 20px 0;
     height: 500px;
-    width: 100%;
 }
-.input-form{
+.select-option{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    height: 100%;
 }
-.main-main ul{
-    text-align: left;
+
+.alarm-item{
+    box-sizing: border-box;
+    width: 240px;
+    height: 200px;
+
+    padding: 10px;
+    border: 2px solid #ff9900;
+    border-radius: 0px 20px;
+
+
+    margin-top: 20px;
 }
-.main-main ul li{
-    margin: 10px 0;
-}
-.main-main ul li div:last-child{
-    margin-top: 10px;
-    margin-left: 10px;
-}
+
+
 .main-footer{
     display: inline-flex;
 }
-.btn{
-    margin: 0 10px;
-}
-
-.myinfo{
+.alarm-setting{
     color: #ff9900;
 }
+

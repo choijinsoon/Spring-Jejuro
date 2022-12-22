@@ -6,6 +6,7 @@
 
     display: inline-flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 
@@ -15,41 +16,32 @@
 }
 .main-option{
     display: flex;
-    margin-top: 20px;
 }
 .main-option div{
     padding: 0 20px;
 }
 .main-main{
+    text-align: left;
     margin: 20px 0;
     height: 500px;
-    width: 100%;
 }
-.input-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 100%;
+.input-container:not(:first-child){
+    margin-top: 20px;
 }
-.main-main ul{
-    text-align: left;
-}
-.main-main ul li{
-    margin: 10px 0;
-}
-.main-main ul li div:last-child{
-    margin-top: 10px;
-    margin-left: 10px;
+.input-container div{
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 .main-footer{
     display: inline-flex;
 }
-.btn{
-    margin: 0 10px;
+.input{
+    width: 25vh;
+	border-radius: 10px;
+	border: 2px solid gray;
+	padding: 15px 15px;
 }
-
 .myinfo{
     color: #ff9900;
 }
+

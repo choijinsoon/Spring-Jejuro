@@ -16,6 +16,9 @@ import com.jejuro.web.service.MemberService;
 @RequestMapping("/member")
 public class MemberController {
 	
+	public MemberController() {
+
+	}
 	@Autowired
 	private MemberService service;
 
@@ -72,12 +75,6 @@ public class MemberController {
 						Model model) {
 		Member member = service.get(email);
 		model.addAttribute("member", member);
-		return "member/myinfo";
-	}
-	
-	@PostMapping("/myinfo/{email}")
-	public String Displayalarm(@PathVariable("email") String email) {
-		service.get(email);
 		return "member/myinfo";
 	}
 
